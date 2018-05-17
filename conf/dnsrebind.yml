@@ -1,0 +1,7 @@
+EnableHTTP: true
+EnableDNS: true
+EnableCapture: true
+
+DNSName: rebindmy.zone.
+HTTPIP: 18.217.171.44
+CaptureIP: 18.221.50.102

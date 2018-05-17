@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DNS Rebinding Server</title>
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+</head>
+
+<body>
+  <div id="log"></div>
+  <script>
+    var socket = new WebSocket((window.location.protocol === "https:" ? "wss" : "ws") + "://" + window.location.host + "/ws");
+
+    var addLog = function(l) {
+      var e = document.createElement("span");
+      e.textContent = l;
+      var le = document.getElementById("log")
+      le.appendChild(e);
+      le.appendChild(document.createElement("br"));
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    socket.onopen = function() {
+      addLog("Following server request log...");
+    }
+
+    socket.onclose = function() {
+      addLog("Socket closed.");
+    }
+
+    socket.onmessage = function(e) {
+      addLog(JSON.parse(e.data));
+    }
+  </script>
+</body>
+
+</html>

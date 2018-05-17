@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--
+SuperSecretSentinel
+-->
+  <title></title>
+  {{range .PrefetchCount}}
+  <link rel="dns-prefetch" href="//{{.R.Host}}" /> {{end}}
+</head>
+
+<body>
+  {{.Script}}
+</body>
+
+</html>

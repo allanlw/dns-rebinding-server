@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+  <title></title>
+  <style>
+    #frames {
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="display-2">Attack <small id="state" class="text-muted"></small></h1>
+        <p id=sinfo></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="progress">
+          <div id="progressDone" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          <div id="progressPending" class="progress-bar-striped progress-bar progress-bar-animated bg-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">Results</div>
+          <div class="card-body">
+            <p>Requests: <span id="reqcount"></span></p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Port</th>
+                  <th>Status</th>
+              </thead>
+              <tbody id="results-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">Log</div>
+          <div class="card-body">
+            <pre><code id="results"></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="frames"></div>
+  </div>
+
+  <script src="/attack.js"></script>
+</body>
+
+</html>
